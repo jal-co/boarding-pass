@@ -1,0 +1,26 @@
+{
+  "name": "boarding-pass",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "playwright test"
+  },
+  "dependencies": {
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "motion": "13.2.0",
+    "dialkit": "2.0.0"
+  },
+  "devDependencies": {
+    "vite": "8.2.2",
+    "typescript": "6.0.3",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.7",
+    "@playwright/test": "^1.58.2"
+  }
+}

@@ -1,0 +1,9 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; }
+button, a { -webkit-tap-highlight-color: transparent; }
+.page { min-height: 100dvh; display: grid; place-items: center; padding: 64px 32px; background: #f4f3ef; color: #34332f; }
+.page.dark { background: #171816; color: #d9dbd4; }
+.pass-stage { width: 704px; padding: 16px; }
+.page-actions { position: fixed; bottom: 24px; left: 24px; display: flex; gap: 20px; align-items: center; font-size: 13px; }
+.page-actions button, .page-actions a { display: inline-flex; align-items: center; min-height: 44px; padding: 0; color: inherit; background: transparent; border: 0; font: inherit; cursor: pointer; text-underline-offset: 4px; }
+.page-actions button:focus-visible, .page-actions a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
