@@ -213,7 +213,7 @@ export function BoardingPass({
           </div>
         </motion.div>
         <p id={statusId} className="pass-status" aria-live="polite">{status}</p>
-        <div data-pass-region="pass-actions"><div className="pass-actions"><button className="pass-reset" type="button" onClick={onReattach} disabled={progress === 0}>Reattach</button></div></div>
+        <div data-pass-region="pass-actions"><div className="pass-actions"><button className="pass-reset" type="button" onClick={onReattach} disabled={progress === 0}><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 10a9 9 0 1 1 2 8M3 4v6h6" /></svg>Reattach</button></div></div>
       </div>
     </div>
   )

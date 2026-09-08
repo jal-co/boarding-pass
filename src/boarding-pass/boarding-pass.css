@@ -195,9 +195,10 @@
 .pass-stub-paper { position: absolute; inset: 0; }
 .pass-bridges { position: absolute; inset: 0; overflow: visible; pointer-events: none; fill: var(--pass-paper); }
 
-.pass-actions { display: flex; align-items: center; height: 48px; }
-.pass-actions .pass-reset { padding-inline: 0 12px; color: var(--pass-ink); background: transparent; font: inherit; text-transform: uppercase; letter-spacing: .08em; }
-.pass-actions .pass-reset:hover { color: var(--pass-ink); }
+.pass-actions { display: flex; align-items: center; justify-content: flex-end; height: 48px; }
+.pass-actions .pass-reset { display: inline-flex; align-items: center; gap: 8px; padding: 0 4px 0 12px; color: #34352f; background: transparent; border: 0; border-radius: 4px; font: 500 12px/16px 'Plex Mono Pass', monospace; }
+.dark .pass-actions .pass-reset { color: #e4e5dd; }
+@media (hover: hover) { .pass-actions .pass-reset:not(:disabled):hover { filter: brightness(1.12); } }
 
 @media (prefers-reduced-motion: reduce) {
   .pass-hand, .pass-stub { transition: none; }
@@ -213,5 +214,5 @@
 .pass-field-low .pass-value { font-size: 14px; line-height: 16px; }
 .pass-reset { border: 0; cursor: pointer; min-height: 44px; }
 .pass-reset:disabled { opacity: .4; cursor: default; }
-.pass-reset:focus-visible { outline: 2px solid var(--ring, #3764b7); outline-offset: 2px; }
+.pass-reset:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 .pass-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
