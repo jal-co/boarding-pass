@@ -73,3 +73,22 @@ test('placeholder airline marks load without workshop assets', async ({ page }) 
     expect(loaded).toBe(true)
   }
 })
+
+test('social links match the project and stay clear of DialKit', async ({ page }) => {
+  await page.goto('/')
+  await expect(page.getByRole('link', { name: 'View source on GitHub' })).toHaveAttribute('href', 'https://github.com/jal-co/boarding-pass')
+  const follow = page.getByRole('link', { name: 'Follow jalcowastaken on X' })
+  await expect(follow).toHaveCount(2)
+  await expect(page.locator('.social-note')).toBeVisible()
+  for (const link of await follow.all()) {
+    await expect(link).toHaveAttribute('href', 'https://x.com/jalcowastaken')
+    await expect(link).toHaveAttribute('target', '_blank')
+  }
+  const pill = await page.locator('.social-pill').boundingBox()
+  const controls = await page.locator('.dialkit-panel-inner').boundingBox()
+  if (!pill || !controls) throw new Error('Page controls are missing')
+  expect(controls.y + controls.height).toBeLessThan(pill.y)
+  await page.setViewportSize({ width: 390, height: 844 })
+  await expect(page.locator('.social-note')).toBeHidden()
+  await expect(page.getByRole('link', { name: 'View source on GitHub' })).toBeVisible()
+})

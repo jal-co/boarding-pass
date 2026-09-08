@@ -11,7 +11,7 @@ npm install
 npm run dev
 ```
 
-Open the URL printed by Vite. The bottom-right button opens DialKit. Drag the stub to tear it off, or focus it and press Enter or Space. Arrow keys tear incrementally. Reattach resets the ticket. Reduced-motion preferences are respected.
+Open the URL printed by Vite. The top-right button opens DialKit. Drag the stub to tear it off, or focus it and press Enter or Space. Arrow keys tear incrementally. Reattach resets the ticket. Reduced-motion preferences are respected.
 
 ```sh
 npm run build

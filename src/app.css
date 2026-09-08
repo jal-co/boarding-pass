@@ -7,3 +7,20 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .page-actions { position: fixed; bottom: 24px; left: 24px; display: flex; gap: 20px; align-items: center; font-size: 13px; }
 .page-actions button, .page-actions a { display: inline-flex; align-items: center; min-height: 44px; padding: 0; color: inherit; background: transparent; border: 0; font: inherit; cursor: pointer; text-underline-offset: 4px; }
 .page-actions button:focus-visible, .page-actions a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+
+.social-links { position: fixed; right: 24px; bottom: 24px; z-index: 10; }
+.social-pill { display: flex; gap: 2px; padding: 4px; border: 1px solid rgb(0 0 0 / .12); border-radius: 28px; background: rgb(255 255 255 / .8); box-shadow: 0 1px 3px rgb(0 0 0 / .06); }
+.dark .social-pill { border-color: rgb(255 255 255 / .14); background: rgb(28 29 27 / .9); }
+.social-icon { display: flex; width: 44px; height: 44px; align-items: center; justify-content: center; color: inherit; border-radius: 22px; transition: background-color 150ms ease-out; }
+.social-note { position: absolute; right: 66px; bottom: calc(100% - 12px); display: flex; flex-direction: column; align-items: flex-end; color: #c44e08; text-decoration: none; user-select: none; }
+.dark .social-note { color: #ff943f; }
+.social-note-text { font-size: 18px; white-space: nowrap; transform: rotate(-6deg); padding-right: 32px; transition: transform 180ms ease-out; }
+.social-note-arrow { flex: none; transition: transform 180ms ease-out; }
+.social-links a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+@media (hover: hover) and (pointer: fine) {
+  .social-icon:hover { background: rgb(128 128 128 / .14); }
+  .social-note:hover .social-note-text { transform: rotate(-3deg); }
+  .social-note:hover .social-note-arrow { transform: translateY(2px); }
+}
+@media (max-width: 767px) { .social-note { display: none; } .social-links { right: 16px; bottom: 16px; } }
+@media (prefers-reduced-motion: reduce) { .social-links * { transition: none; } }

@@ -3,6 +3,7 @@ import { DialRoot, useDialKitController, useDialTimeline } from 'dialkit'
 import type { TimelineConfig } from 'dialkit'
 import { useReducedMotion } from 'motion/react'
 import 'dialkit/styles.css'
+import { SocialLinks } from './SocialLinks'
 import { BoardingPass } from './boarding-pass/BoardingPass'
 import { airlines, cabins, type Airline, type Cabin } from './boarding-pass/airlines'
 
@@ -86,7 +87,8 @@ export default function App() {
           onReattach={reattach}
         />
     </div>
-    <nav className="page-actions" aria-label="Page controls"><button type="button" onClick={() => setDark(!dark)}>{dark ? 'Light mode' : 'Dark mode'}</button><a href="https://github.com/jal-co/boarding-pass">Source</a></nav>
-    <DialRoot position="bottom-right" defaultOpen={false} theme={dark ? 'dark' : 'light'} productionEnabled />
+    <nav className="page-actions" aria-label="Page controls"><button type="button" onClick={() => setDark(!dark)}>{dark ? 'Light mode' : 'Dark mode'}</button></nav>
+    <SocialLinks />
+    <DialRoot position="top-right" defaultOpen={false} theme={dark ? 'dark' : 'light'} productionEnabled />
   </main>
 }
